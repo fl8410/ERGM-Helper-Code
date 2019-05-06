@@ -10,7 +10,7 @@ Bulk.ERGM.Fit<-function(network=NULL,required.terms,optional.terms,AIC.thresh=NU
   
   required.text.str<-do.call(paste,list(required.terms,collapse="+"))
   model.list<-lapply(1:length(optional.terms),function(i){
-  permutations(n=length(optional.terms),r=i,v=optional.terms)})
+  combinations(n=length(optional.terms),r=i,v=optional.terms)})
   
   optional.vector<-unlist(lapply(1:length(optional.terms),
          function(i){
